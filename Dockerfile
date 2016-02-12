@@ -1,4 +1,4 @@
-FROM qnib/alpn-consul
+FROM qnib/alpn-consul:openrc
 
 RUN apk update && apk upgrade && \
     apk add rsyslog && \
