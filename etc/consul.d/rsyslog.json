@@ -3,7 +3,7 @@
     "id": "syslog",
     "name": "syslog",
     "port": 514,
-    "script": "service rsyslog status|grep started",
+    "script": "supervisorctl status|egrep '^rsyslog\\s+RUNNING'",
     "interval": "10s"
   }
 }
