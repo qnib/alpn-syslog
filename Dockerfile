@@ -1,8 +1,7 @@
-FROM qnib/alpn-consul
+FROM qnib/alpn-consul:edge
 
-RUN apk update && apk upgrade && \
-    apk add rsyslog && \
-    rm -rf /var/cache/apk/*
+RUN apk add --update rsyslog \
+ && rm -rf /var/cache/apk/*
 ADD etc/supervisord.d/rsyslog.ini \
     etc/supervisord.d/rsyslog_conf.ini \
     /etc/supervisord.d/
